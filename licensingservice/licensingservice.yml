@@ -2,17 +2,22 @@ example:
   property: "THE DEFAULT LICENSING CONFIG"
 spring:
   jpa:
-    database: "POSTGRESQL"
+    database: "PostgreSQL"
     show-sql: "true"
     properties:
       hibernate:
+        ddl-auto: "update"
         dialect: "org.hibernate.dialect.PostgreSQLDialect"
-  database:
-    driverClassName: "org.postgresql.Driver"
+
+
+
   datasource:
-    platform: "postgres"
+    driver-class-name: "org.postgresql.Driver"
     url: "jdbc:postgresql://database:5432/licensing-app-local"
     username: "postgres"
     password: "p0stgr€s"
     testWhileIdle: "true"
     validationQuery: "SELECT 1"
+  sql:
+    init:
+      platform: "postgres"
